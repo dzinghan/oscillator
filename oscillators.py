@@ -144,14 +144,8 @@ oscillatorN(sinWave(50, 500, 250, 4))
 #standing wave
 def standingWave(lmda, N, tf, S):
     [m, k, xi, vi, tf] = [[], [], [], [], tf]
-    for i in range(N//2):
+    for i in range(N):
         xi.append(math.sin(2*math.pi*i / lmda))
-        k.append(S)
-        m.append(1)
-        vi.append(0)
-
-    for i in range(N//2, N):
-        xi.append(0)
         k.append(S)
         m.append(1)
         vi.append(0)
