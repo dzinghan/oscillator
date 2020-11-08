@@ -42,7 +42,7 @@ def oscillatorN(E):
 
     XT = np.array(X).T
     fig = plt.figure()
-    ax = plt.axes(xlim=(0, len(m)), ylim=(-1, 1))
+    ax = plt.axes(xlim=(0, len(m)), ylim=(-1.5, 1.5))
     line, = ax.plot([], [], lw=2)
 
     def init():
@@ -60,7 +60,7 @@ def oscillatorN(E):
     anim = matplotlib.animation.FuncAnimation(fig, animate, init_func=init, frames=len(XT)//4, interval=5, blit=True)
     plt.xlabel('oscillator number')
     plt.ylabel('position from equilibrium (m)')
-    plt.title('Single oscillator initial motion (1000 oscillators)')
+    plt.title('Travelling wave (500 oscillators)')
     plt.show()
 
 
@@ -139,10 +139,10 @@ def sinWave(lmda, N, tf, S):
 
     return [m, k, xi, vi, tf]
 
-#oscillatorN(sinWave(50, 1000, 250, 4))
+oscillatorN(sinWave(50, 500, 250, 4))
 
 #standing wave
-def standindWave(lmda, N, tf, S):
+def standingWave(lmda, N, tf, S):
     [m, k, xi, vi, tf] = [[], [], [], [], tf]
     for i in range(N//2):
         xi.append(math.sin(2*math.pi*i / lmda))
